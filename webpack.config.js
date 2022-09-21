@@ -139,7 +139,6 @@ module.exports = [
             new GenerateSW({
             	swDest: 'sw.js',
             	clientsClaim: true,
-                exclude: [/\.map$/, /asset-manifest\.json$/],
                 maximumFileSizeToCacheInBytes: 1000000000
             }),
             new HtmlWebpackPlugin({
