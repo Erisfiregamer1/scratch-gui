@@ -138,7 +138,7 @@ module.exports = [
             }),
             new GenerateSW({
             	swDest: 'sw.js',
-            	clientsClaim: true,
+            	clientsClaim: false,
                 maximumFileSizeToCacheInBytes: 1000000000
             }),
             new HtmlWebpackPlugin({
