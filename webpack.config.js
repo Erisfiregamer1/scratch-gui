@@ -137,6 +137,7 @@ module.exports = [
                 'process.env.GA_ID': '"' + (process.env.GA_ID || 'UA-000000-01') + '"'
             }),
             new GenerateSW({
+            	swDest: 'sw.js',
             	clientsClaim: true,
                 exclude: [/\.map$/, /asset-manifest\.json$/],
                 maximumFileSizeToCacheInBytes: 1000000000
