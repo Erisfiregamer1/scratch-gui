@@ -5,6 +5,7 @@ var webpack = require('webpack');
 // Plugins
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // PostCss
@@ -134,6 +135,11 @@ module.exports = [
                 'process.env.NODE_ENV': '"' + process.env.NODE_ENV + '"',
                 'process.env.DEBUG': Boolean(process.env.DEBUG),
                 'process.env.GA_ID': '"' + (process.env.GA_ID || 'UA-000000-01') + '"'
+            }),
+            new GenerateSW({
+            	clientsClaim: true,
+                exclude: [/\.map$/, /asset-manifest\.json$/],
+                maximumFileSizeToCacheInBytes: 1000000000
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'gui'],
