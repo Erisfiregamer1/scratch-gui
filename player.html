@@ -9,5 +9,12 @@
     
   </head>
   <body>
+  <script>
+    if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('/scratch-gui/sw.js', {scope: '/scratch-gui/'})
+             .then(function() { console.log("Created service worker"); });
+    }
+    </script>
   <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/player.js"></script></body>
 </html>
