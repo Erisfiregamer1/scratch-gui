@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-f09d4406'], (function (workbox) { 'use strict';
+define(['./workbox-80d6e1cd'], (function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -5313,6 +5313,7 @@ define(['./workbox-f09d4406'], (function (workbox) { 'use strict';
     "url": "static/favicon.ico",
     "revision": "e9b6a0a182aad756160d2301d2b0a374"
   }], {});
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/")));
 
 }));
 //# sourceMappingURL=sw.js.map
