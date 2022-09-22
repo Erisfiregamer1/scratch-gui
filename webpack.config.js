@@ -139,7 +139,8 @@ module.exports = [
             new GenerateSW({
             	swDest: 'sw.js',
             	clientsClaim: false,
-                maximumFileSizeToCacheInBytes: 1000000000
+                maximumFileSizeToCacheInBytes: 1000000000,
+                navigateFallback: '/'
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'gui'],
